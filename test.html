@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Socket Test</title>
+	</head>
+	<body>
+		<h1>Socket Test</h1>
+
+		<!-- Load Socket.IO client -->
+		<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+		<script>
+			console.log("typeof io:", typeof io);
+
+			const socket = io("http://localhost:3000", {
+				auth: { token: "PASTE_TOKEN_HERE" },
+			});
+
+			socket.on("connect", () => {
+				console.log("CONNECTED:", socket.id);
+			});
+
+			socket.on("connect_error", (err) => {
+				console.error("ERROR:", err.message);
+			});
+
+			socket.on("new_message", (msg) => {
+				console.log("MESSAGE:", msg);
+			});
+		</script>
+	</body>
+</html>

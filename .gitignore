@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+.dist/
+chat-frontend/dist/
+
+# Uploads (local dev only)
+server/uploads/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
